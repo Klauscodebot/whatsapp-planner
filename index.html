@@ -5,63 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World of Klaus</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
         body {
             margin: 0;
             padding: 0;
             background-color: #000;
             color: #fff;
             font-family: 'Cinzel', serif;
+            height: 100vh;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://w0.peakpx.com/wallpaper/453/559/HD-wallpaper-klaus-mikaelson-originals-the-vampire-diaries.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            position: relative;
         }
 
-        .container {
-            position: relative;
-            z-index: 1;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
-            max-width: 80%;
+        /* Ticker Style */
+        .ticker-container {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            overflow: hidden;
+            background: rgba(139, 0, 0, 0.2);
+            padding: 10px 0;
+            border-top: 1px solid #d4af37;
+            border-bottom: 1px solid #d4af37;
+        }
+
+        .ticker-text {
+            display: inline-block;
+            white-space: nowrap;
+            animation: ticker 30s linear infinite;
+            font-size: 1.1rem;
+            color: #d4af37;
+            letter-spacing: 2px;
+        }
+
+        .ticker-text span {
+            margin-right: 100px;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .main-content {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 2;
+        }
+
+        .text-section {
+            flex: 1;
+            text-align: left;
+            padding-right: 50px;
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             text-transform: uppercase;
-            letter-spacing: 8px;
+            letter-spacing: 10px;
             margin: 0;
             background: linear-gradient(to bottom, #d4af37 0%, #f9e29c 50%, #d4af37 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-        }
-
-        p.quote {
-            font-size: 1.2rem;
-            letter-spacing: 3px;
-            color: #d4af37;
-            margin-top: 20px;
-            font-style: italic;
+            line-height: 1.1;
         }
 
         .contact-btn {
             display: inline-block;
-            margin-top: 30px;
-            padding: 12px 30px;
+            margin-top: 40px;
+            padding: 15px 40px;
             border: 2px solid #d4af37;
             color: #d4af37;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             transition: all 0.3s ease;
             font-weight: bold;
         }
@@ -69,38 +94,65 @@
         .contact-btn:hover {
             background: #d4af37;
             color: #000;
-            box-shadow: 0 0 20px #d4af37;
+            box-shadow: 0 0 30px #d4af37;
+        }
+
+        .image-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 50px rgba(139, 0, 0, 0.4);
+            border: 1px solid #333;
         }
 
         footer {
             position: absolute;
             bottom: 20px;
             width: 100%;
-            font-size: 0.9rem;
-            color: #666;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #555;
             letter-spacing: 1px;
         }
 
-        footer a {
-            color: #666;
-            text-decoration: none;
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; letter-spacing: 4px; }
+        @media (max-width: 900px) {
+            .main-content { flex-direction: column; text-align: center; }
+            .text-section { padding-right: 0; margin-bottom: 40px; }
+            h1 { font-size: 2.5rem; }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to the World of Klaus</h1>
-        <p class="quote">"Always and Forever."</p>
-        <a href="https://wa.me/918884324836" class="contact-btn">Contact the Owner</a>
+
+    <div class="ticker-container">
+        <div class="ticker-text">
+            <span>"Always and Forever."</span>
+            <span>"He’s your first love. I intend to be your last."</span>
+            <span>"Don't underestimate the allure of darkness. Even the purest hearts are drawn to it."</span>
+            <span>"A warrior fights for what they believe in. A monster fights for what they want."</span>
+            <span>"Family is power. Love, loyalty... that's power."</span>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="text-section">
+            <h1>Welcome to the World of Klaus</h1>
+            <a href="https://wa.me/918884324836" class="contact-btn">Contact the Owner</a>
+        </div>
+        <div class="image-section">
+            <img src="https://m.media-amazon.com/images/M/MV5BMjI0NjcxNjAwNF5BMl5BanBnXkFtZTgwNjA2MjkyMjE@._V1_.jpg" alt="Klaus Mikaelson">
+        </div>
     </div>
 
     <footer>
         &copy; 2026 *Klaus* - _bot by Anurag_ 🤟🐼🤟
     </footer>
+
 </body>
 </html>
